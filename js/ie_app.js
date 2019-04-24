@@ -108,8 +108,9 @@ $(document).ready(function () {
         });
 
         // if user scolls then cancel webpage call.
-        portfolio[i].addEventListener('touchmove', function () {
+        portfolio[i].addEventListener('touchmove', function (e) {
             touchMoveFlag = true;
+            e.preventDefault();
         });
 
         // change color on touchend and if user has not scrolled then goto project page.
