@@ -95,16 +95,16 @@ $(document).ready(function () {
         });
 
         // change colors on touchstart and lift portfolio item off the page.
-        //portfolio[i].addEventListener('touchstart', function (e) {
+        portfolio[i].addEventListener('touchstart', function (e) {
             //e.preventDefault();
-            //this.getElementsByTagName('h2')[0].style.color = "white";
-            //this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
-           // this.style.zIndex = 1000;
-            //this.style.transform = "scale(1.1)";
+            this.getElementsByTagName('h2')[0].style.color = "white";
+            this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
+            this.style.zIndex = 1000;
+            this.style.transform = "scale(1.1)";
                         
             // Stop mouseover from changing text colors.
-        //    touchStartFlag = true;
-        //});
+            touchStartFlag = true;
+        });
 
         // if user scolls then cancel webpage call.
         portfolio[i].addEventListener('touchmove', function () {
@@ -112,23 +112,15 @@ $(document).ready(function () {
         });
 
         // change color on touchend and if user has not scrolled then goto project page.
-        portfolio[i].addEventListener('touchstart', function (e) {
-            this.getElementsByTagName('h2')[0].style.color = "white";
-            this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
-            this.style.zIndex = 1000;
-            this.style.transform = "scale(1.1)";
-
-            // Stop mouseover from changing text colors.
-            touchStartFlag = true;
-
+        portfolio[i].addEventListener('touchend', function (e) {
             var url = $(this.getElementsByTagName('span')).attr('href');
             this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
             this.getElementsByTagName('h3')[0].style.color = "white";
 
             // if user has not scrolled then prevent default behavior of touchend.
-            //if (!touchMoveFlag) {
-            //    e.preventDefault();
-            //}
+            if (!touchMoveFlag) {
+                e.preventDefault();
+            }
 
             // put item back on page.
             this.style.transform = "scale(1)";
