@@ -1,0 +1,124 @@
+* { 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#search {
+    display: block;
+    margin: 16px auto 24px;
+    width: 280px;
+}
+
+.item {
+    margin: auto;
+}
+
+.profile-picture-and-text {
+    width: 310px;
+    margin: 0 auto 75px;
+}
+
+.profile-picture-and-text img {
+    width: 270px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border: solid 1px lightslategray;
+}
+
+#portfolio {
+    margin-bottom: 16px;
+    color: darkslateblue;
+}
+
+.portfolio-pictures-and-text {
+    width: 310px;
+    margin: 0 auto;
+    transition: transform 0.5s;
+}
+
+.portfolio-pictures-and-text img {
+    width: 300px;
+    padding: 10px;
+    background-color:antiquewhite;
+    border: solid 1px lightslategray;
+}
+
+.portfolio-pictures-and-text:hover {
+    transform: scale(1.1)
+}
+
+.attribute {
+    margin: 0 10px 10px;
+}
+
+#contact {
+    width: 310px;
+    margin: 75px auto 0;
+}
+
+.phone-email {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+}
+
+.item2 {
+    padding: 0 15px;
+}
+
+
+.svgitem2 {
+    margin: 2em 0 0;
+}
+
+.svg {
+    margin: 0 5px;
+}
+
+a {
+    text-decoration: none;
+    color: darkslateblue;
+}
+
+.light-text {
+    color: cadetblue;
+}
+
+h2 {
+    color: darkslateblue;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    height: 25px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-top: 1px lightslategray solid;
+} 
+
+.footer-item-2,
+.footer-item-3,
+.footer-item-4 {
+    display: none;
+}
+
+.footer-item-1 {
+    margin-right: 20px;
+}
+
+.footer-item-5 {
+    margin-left: 20px;
+}
