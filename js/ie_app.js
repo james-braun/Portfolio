@@ -121,9 +121,9 @@ $(document).ready(function () {
             this.style.zIndex = 100;
 
             // after 750 mili-second if user has not scrolled then goto project page.
-            if (!touchMoveFlag) {
+            //if (!touchMoveFlag) {
                 window.location.href = $(this.getElementsByTagName('span')).attr('href');
-            }
+            //}
 
             // if user was scrolling end touchmove.
             if (touchMoveFlag) {
