@@ -65,7 +65,11 @@ $(document).ready(function () {
         });
 
         portfolio[i].addEventListener('click', function () {
-            window.location.href = $(this.getElementsByTagName('span')).attr('href');
+            if (!touchStartFlag) {
+                window.location.href = $(this.getElementsByTagName('span')).attr('href');
+            } else {
+                touchStartFlag = !touchStartFlag;
+            }
         });
 
         // change colors on mouseover.
@@ -77,6 +81,8 @@ $(document).ready(function () {
                 $(this).css("text-shadow", "0.3125em 0.3125em 0.3125em black");
                 this.getElementsByTagName('h2')[0].style.color = "white";
                 this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
+            } else {
+                touchStartFlag = !touchStartFlag;
             }
         });
 
