@@ -49,8 +49,6 @@ $(document).ready(function () {
         });
     });
 
-    var delay;
-
     // flag to control if new page is to load or page is to scroll.
     var touchMoveFlag = false;
 
@@ -64,6 +62,10 @@ $(document).ready(function () {
         repository[i].addEventListener('touchstart', function (e) {
             e.preventDefault();
             window.location.href = this.href;
+        });
+
+        portfolio[i].addEventListener('click', function () {
+            window.location.href = $(this.getElementsByTagName('span')).attr('href');
         });
 
         // change colors on mouseover.
@@ -93,8 +95,7 @@ $(document).ready(function () {
             this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
             this.style.zIndex = 1000;
             this.style.transform = "scale(1.3)";
-            delay = setTimeout(function () { }, 10000);
-            
+                        
             // Stop mouseover from changing text colors.
             touchStartFlag = true;
         });
@@ -106,7 +107,6 @@ $(document).ready(function () {
 
         // change color on touchend and if user has not scrolled then goto project page.
         portfolio[i].addEventListener('touchend', function (e) {
-            clearTimeout(delay);
             this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
             this.getElementsByTagName('h3')[0].style.color = "white";
 
@@ -121,7 +121,7 @@ $(document).ready(function () {
 
             // after 750 mili-second if user has not scrolled then goto project page.
             if (!touchMoveFlag) {
-                var url = this.getElementsByTagName('a')[0].href;
+                var url = $(this.getElementsByTagName('span')).attr('href');
                 window.setTimeout(function () { window.location.href = url; }, 750);
             }
 
