@@ -77,7 +77,6 @@ $(document).ready(function () {
                 $(this).css("text-shadow", "0.3125em 0.3125em 0.3125em black");
                 this.getElementsByTagName('h2')[0].style.color = "white";
                 this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
-                touchStartFlag = false;
             }
         });
 
@@ -107,7 +106,7 @@ $(document).ready(function () {
         });
 
         // change color on touchend and if user has not scrolled then goto project page.
-        portfolio[i].addEventListener('touchend', function (e) {
+        portfolio[i].addEventListener('touchstart', function (e) {
             this.getElementsByTagName('h2')[0].style.color = "white";
             this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
             this.style.zIndex = 1000;
