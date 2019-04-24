@@ -108,6 +108,7 @@ $(document).ready(function () {
 
         // change color on touchend and if user has not scrolled then goto project page.
         portfolio[i].addEventListener('touchend', function (e) {
+            var url = $(this.getElementsByTagName('span')).attr('href');
             this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
             this.getElementsByTagName('h3')[0].style.color = "white";
 
@@ -122,7 +123,7 @@ $(document).ready(function () {
 
             // after 750 mili-second if user has not scrolled then goto project page.
             if (!touchMoveFlag) {
-                var url = $(this.getElementsByTagName('span')).attr('href');
+                
                 setTimeout(function () { window.location.href = url }, 750);
             }
 
