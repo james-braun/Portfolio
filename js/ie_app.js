@@ -64,7 +64,8 @@ $(document).ready(function () {
             window.location.href = this.href;
         });
 
-        portfolio[i].addEventListener('click', function () {
+        portfolio[i].addEventListener('click', function (e) {
+            e.preventDefault();
             if (!touchStartFlag) {
                 window.location.href = $(this.getElementsByTagName('span')).attr('href');
             } else {
