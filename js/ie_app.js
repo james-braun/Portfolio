@@ -95,7 +95,7 @@ $(document).ready(function () {
             this.getElementsByTagName('h2')[0].style.color = "white";
             this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
             this.style.zIndex = 1000;
-            this.style.transform = "scale(1.3)";
+            this.style.transform = "scale(1.1)";
                         
             // Stop mouseover from changing text colors.
             touchStartFlag = true;
