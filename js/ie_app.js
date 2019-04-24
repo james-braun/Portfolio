@@ -121,8 +121,7 @@ $(document).ready(function () {
 
             // after 750 mili-second if user has not scrolled then goto project page.
             if (!touchMoveFlag) {
-                var url = $(this.getElementsByTagName('span')).attr('href');
-                window.location.href = url;
+                window.location.href = $(this.getElementsByTagName('span')).attr('href');
             }
 
             // if user was scrolling end touchmove.
