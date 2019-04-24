@@ -121,9 +121,9 @@ $(document).ready(function () {
             this.getElementsByTagName('h3')[0].style.color = "white";
 
             // if user has not scrolled then prevent default behavior of touchend.
-            if (!touchMoveFlag) {
-                e.preventDefault();
-            }
+            //if (!touchMoveFlag) {
+            //    e.preventDefault();
+            //}
 
             // put item back on page.
             this.style.transform = "scale(1)";
