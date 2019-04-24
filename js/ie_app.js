@@ -2,6 +2,10 @@
 
 $(document).ready(function () {
 
+    document.oncontextmenu = function () {
+        return false;
+    }
+
     // select and remove span element.
     $(document.getElementById('gallery-heading')).hide();
 
