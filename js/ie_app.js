@@ -73,6 +73,10 @@ $(document).ready(function () {
             }
         });
 
+        portfolio[i].addEventListener('rightclick', function (e) {
+            e.preventDefault();
+        });
+
         // change colors on mouseover.
         portfolio[i].addEventListener('mouseover', function () {
 
