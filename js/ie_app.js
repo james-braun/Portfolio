@@ -112,9 +112,9 @@ $(document).ready(function () {
             this.getElementsByTagName('h3')[0].style.color = "white";
 
             // if user has not scrolled then prevent default behavior of touchend.
-            //if (!touchMoveFlag) {
+            if (!touchMoveFlag) {
                 e.preventDefault();
-            //}
+            }
 
             // put item back on page.
             this.style.transform = "scale(1)";
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
             // after 750 mili-second if user has not scrolled then goto project page.
             if (!touchMoveFlag) {
-                window.location.href = $(this.getElementsByTagName('span')).attr('href');
+                setTimeout(function () { window.location.href = $(this.getElementsByTagName('span')).attr('href'); }, 750);
             }
 
             // if user was scrolling end touchmove.
