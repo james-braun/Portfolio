@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 48em) {
 
     .sub-navigation {
         display: flex;
@@ -7,23 +7,23 @@
     }
 
     .item {
-        margin: 0 25px;
+        margin: 0 1.5em;
     }
 
     #search {
-        width: 450px;
+        width: 28.125em;
     }
 
     .profile-picture-and-text {
         display: flex;
         flex-direction: row-reverse;
-        width: 620px;
-        height: 167px;
+        width: 38.75em;
+        height: 10.4375em;
         text-align: left;
     }
 
     .profile-picture-and-text  h3 {
-        margin: 0 10px;
+        margin: 0 0.625em;
     }
 
     .profile-picture-and-text img {
@@ -33,22 +33,22 @@
     .gallery {
         display: inline-flex;
         flex-direction: row;
-        width: 768px;
+        width: 48em;
         justify-content: center;
         flex-wrap: wrap;
     }
 
     .portfolio-pictures-and-text {
-        margin: 0 0 25px;
+        margin: 0 0 1.5em;
     }
 
     #contact {
-        width: 460px;
+        width: 28.75em;
     }
 
     .footer-container {
         display: inline-flex;
-        width: 620px;
+        width: 38.75em;
         justify-content: flex-start;
     }
 
@@ -56,7 +56,7 @@
     .footer-item-3,
     .footer-item-4 {
         display: block;
-        margin: 0 10px;
+        margin: 0 0.625em;
     }
 
     .footer-item-5 {
@@ -70,13 +70,13 @@
     
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
 
     .navigation {
         display: inline-flex;
         flex-direction: row;
         justify-content: flex-start;
-        width: 940px;
+        width: 58.75em;
     }
 
     .name {
@@ -84,31 +84,31 @@
     }
 
     .sub-navigation .item {
-       padding-top: 10px;
+       padding-top: 0.625em;
     }
 
     #search {
-        width: 600px;
+        width: 37.5em;
     }
 
     .profile-picture-and-text {
-        width: 920px;
-        height: 225px;
+        width: 57.5em;
+        height: 14.0625em;
     }
 
     .profile-picture-and-text img {
-        width: 367px;
+        width: 22.9375em;
     }
 
     .gallery {
-        width: 1024px;
+        width: 64em;
     }
 
     #contact {
-        width: 500px;
+        width: 31.25em;
     }
 
     .footer-container {
-        width: 920px;
+        width: 57.5em;
     }
 }
