@@ -124,8 +124,8 @@ $(document).ready(function () {
 
             // if user has not scrolled then prevent default behavior of touchend.
             if (!touchMoveFlag) {
-                e.stopPropagation();
                 e.preventDefault();
+                e.startPropagation();
             }
 
             // put item back on page.
