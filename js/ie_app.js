@@ -114,7 +114,6 @@ $(document).ready(function () {
         // if user scolls then cancel webpage call.
         portfolio[i].addEventListener('touchmove', function (e) {
             touchMoveFlag = true;
-            e.preventDefault();
         });
 
         // change color on touchend and if user has not scrolled then goto project page.
@@ -125,7 +124,6 @@ $(document).ready(function () {
 
             // if user has not scrolled then prevent default behavior of touchend.
             if (!touchMoveFlag) {
-                e.preventDefault();
                 e.stopPropagation();
             }
 
