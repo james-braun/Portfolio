@@ -118,15 +118,15 @@ $(document).ready(function () {
 
         // change color on touchend and if user has not scrolled then goto project page.
         portfolio[i].addEventListener('touchend', function (e) {
-            var url = $(this.getElementsByTagName('span')).attr('href');
-            this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
-            this.getElementsByTagName('h3')[0].style.color = "white";
 
             // if user has not scrolled then prevent default behavior of touchend.
             if (!touchMoveFlag) {
                 e.preventDefault();
-                e.startPropagation();
             }
+
+            var url = $(this.getElementsByTagName('span')).attr('href');
+            this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
+            this.getElementsByTagName('h3')[0].style.color = "white";
 
             // put item back on page.
             this.style.transform = "scale(1)";
