@@ -2,12 +2,12 @@
 
 $(document).ready(function () {
 
+    // select and remove span element.
+    $(document.getElementById('gallery-heading')).hide();
+
     document.oncontextmenu = function () {
         return false;
     }
-
-    // select and remove span element.
-    $(document.getElementById('gallery-heading')).hide();
 
     // create a input element.
     const searchElement = document.createElement("input");
@@ -59,26 +59,16 @@ $(document).ready(function () {
     // flag to control if mouseover was triggered by touchstart.
     var touchStartFlag = false;
 
+    var repoTouch = false;
+
     // add event listeners
     for (var i = 0; i < portfolio.length; i += 1) {
 
         // if repository touchstart then goto repository page.
         repository[i].addEventListener('touchstart', function (e) {
-            e.preventDefault();
+            e.preventDefault();;
             window.location.href = this.href;
-        });
-
-        portfolio[i].addEventListener('click', function (e) {
-            e.preventDefault();
-            if (!touchStartFlag) {
-                window.location.href = $(this.getElementsByTagName('span')).attr('href');
-            } else {
-                touchStartFlag = !touchStartFlag;
-            }
-        });
-
-        portfolio[i].addEventListener('rightclick', function (e) {
-            e.preventDefault();
+            repoTouch = true;
         });
 
         // change colors on mouseover.
@@ -90,8 +80,7 @@ $(document).ready(function () {
                 $(this).css("text-shadow", "0.3125em 0.3125em 0.3125em black");
                 this.getElementsByTagName('h2')[0].style.color = "white";
                 this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
-            } else {
-                touchStartFlag = !touchStartFlag;
+                touchStartFlag = false;
             }
         });
 
@@ -105,45 +94,53 @@ $(document).ready(function () {
 
         // change colors on touchstart and lift portfolio item off the page.
         portfolio[i].addEventListener('touchstart', function () {
-            this.onselectstart = function () { return false; };
             this.getElementsByTagName('h2')[0].style.color = "white";
             this.getElementsByTagName('h3')[0].style.color = "antiquewhite";
-            this.style.zIndex = 1000;
-            this.style.transform = "scale(1.3)";
-                        
+            console.log(navigator.userAgent);
+            if ((navigator.userAgent.indexOf('iPhone') < 0) && navigator.userAgent.indexOf('iPad') < 0) {
+                this.style.zIndex = 1000;
+                this.style.transform = "scale(1.3)";
+            } else {
+                this.style.transform = "scale(1)";
+            }
+
             // Stop mouseover from changing text colors.
             touchStartFlag = true;
         });
 
         // if user scolls then cancel webpage call.
-        portfolio[i].addEventListener('touchmove', function (e) {
+        portfolio[i].addEventListener('touchmove', function () {
             touchMoveFlag = true;
         });
 
         // change color on touchend and if user has not scrolled then goto project page.
         portfolio[i].addEventListener('touchend', function (e) {
+            this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
+            this.getElementsByTagName('h3')[0].style.color = "white";
 
             // if user has not scrolled then prevent default behavior of touchend.
             if (!touchMoveFlag) {
                 e.preventDefault();
             }
 
-            var url = $(this.getElementsByTagName('span')).attr('href');
-            this.getElementsByTagName('h2')[0].style.color = "antiquewhite";
-            this.getElementsByTagName('h3')[0].style.color = "white";
-
             // put item back on page.
-            this.style.transform = "scale(1)";
-            this.style.zIndex = 100;
-
+            if ((navigator.userAgent.indexOf('iPhone') < 0) && navigator.userAgent.indexOf('iPad') < 0) {
+                this.style.zIndex = 0;
+                this.style.transform = "scale(1)";
+            }
             // after 750 mili-second if user has not scrolled then goto project page.
-            if (!touchMoveFlag) {
-                window.location.href = url;
+            if (!touchMoveFlag && !repoTouch) {
+                var url = this.getElementsByTagName('a')[0].href;
+                window.setTimeout(function () { window.location.href = url; }, 750);
             }
 
             // if user was scrolling end touchmove.
             if (touchMoveFlag) {
                 touchMoveFlag = false;
+            }
+
+            if (repoTouch) {
+                repoTouch = false;
             }
         });
     } 

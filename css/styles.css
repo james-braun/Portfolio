@@ -7,7 +7,6 @@ body {
     text-align: center;
     background-color: burlywood;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
 }
 
 .navigation {
@@ -53,7 +52,7 @@ body {
     margin: 0 auto 1.5em;
     transition: transform 0.5s;
     position: relative;
-    z-index: 100;
+    z-index: 0;
     -webkit-user-select: none;
 }
 
